@@ -1,0 +1,1 @@
+var time = playerStartProgress.time;

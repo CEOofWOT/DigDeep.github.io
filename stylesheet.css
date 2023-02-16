@@ -1,0 +1,121 @@
+html {
+    text-align: center;
+    font-size: 15px;
+}
+
+body {
+    margin: auto;
+    text-align: center;
+    background-color: #502611;
+    font: Tahoma, sans-serif;
+    color: #030A20;
+}
+
+#important {
+    font-size: 20px;
+    background: #5A6C16;
+    margin: auto;
+    padding-top: 2.5%;
+    padding-bottom: 5%;
+}
+
+#tabs {
+    display: inline-flex;
+}
+
+.tabButton {
+    overflow-x: scroll;
+    margin: auto;
+    border-radius: 50px;
+    border: 7.5px solid #6A3915;
+    background: #8C5D3B;
+    font-size: 20px;
+    width: 150px;
+    text-align: center;
+}
+
+#digging {
+    display: 50px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 15px solid #6A3915;
+    background: #8C5D3B;
+    width: calc(100% / 2.5);
+    margin: auto;
+}
+
+.diggingButtonArea {
+    text-align: center;
+    border-radius: 8px;
+    padding: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+button {
+    border-radius: 10px;
+    border-width: 2.5px;
+}
+
+#dig {
+    height: 150px;
+    width: 250px;
+    font-size: 30px;
+}
+
+#forwards, #left, #right, #backwards {
+    width: 100px;
+}
+
+#determinationButton {
+    justify-content: space-evenly;
+    margin: auto;
+    border: 15px solid #B66D38;
+    border-radius: 50px;
+    background: #F3C17C;
+}
+
+table, th, td {
+    border: 5px solid #B66D38;
+    font-size: 20px;
+    margin: auto;
+    background-color: #F3C17C;
+}
+
+table#oreTable {
+    height: 150px;
+    width: 150px;
+}
+
+table#oreTable td {
+    width: 30px;
+    height: 30px;
+}
+
+#you {
+    font-size: 17.5px;
+}
+
+table#oreChart th, td {
+    height: 20px;
+    width: 75px;
+}
+
+#achievements {
+    padding-top: 10px;
+    display: flex;
+    place-content: space-evenly center;
+}
+
+.achievement {
+    background: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 12.5%;
+    border: 2.5px solid grey;
+    border-style: outset;
+    margin: auto;
+    font-size: 17.5px;
+    transition: border-color 2.5s, background 2.5s;
+}

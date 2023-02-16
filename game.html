@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div id="important">
+    <span id="tabs">
+      <button class="tabButton" id="digSiteButton">Dig Site</button>
+      <br />
+      <button class="tabButton" id="achievementsButton">Achievements</button>
+    </span>
+    <div><b>Depth:</b> <span id="depth"></span></div>
+    <div><b>Dig Power:</b> <span id="digPower"></span></div>
+  </div>
+  <br>
+  <div class="tab" id="digSiteTab">
+    <div id="digging">
+      <div class="diggingButtonArea">
+        <span>
+          <button id="forwards">Forwards</button>
+          <br />
+          <button id="left">Left</button>
+          <button id="dig">Dig down!</button>
+          <button id="right">Right</button>
+          <br />
+          <button id="backwards">Backwards</button>
+        </span>
+      </div>
+    </div>
+    <br />
+    <table id="oreTable">
+      <tr>
+        <td class="surroundingOre1">NO</td>
+        <td class="surroundingOre2">NO</td>
+        <td class="surroundingOre3">NO</td>
+      </tr>
+      <tr>
+        <td class="surroundingOre4">NO</td>
+        <td class="surroundingOre5" id="you"></td>
+        <td class="surroundingOre6">NO</td>
+      </tr>
+      <tr>
+        <td class="surroundingOre7">NO</td>
+        <td class="surroundingOre8">NO</td>
+        <td class="surroundingOre9">NO</td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <table id="oreChart">
+      <tr>
+        <th>Resource:</th>
+        <td class="aOreOwned">Dirt</td>
+        <td class="bOreOwned">Stone</td>
+        <td class="cOreOwned">Coal</td>
+        <td class="dOreOwned">Copper</td>
+        <td class="eOreOwned">Iron</td>
+        <td class="fOreOwned">Gold</td>
+        <td class="gOreOwned">Diamond</td>
+      <tr>
+        <th>Number:</th>
+        <td class="aOreOwned"><span id="dirt"></span></td>
+        <td class="bOreOwned"><span id="stone"></span></td>
+        <td class="cOreOwned"><span id="coal"></span></td>
+        <td class="dOreOwned"><span id="copper"></span></td>
+        <td class="eOreOwned"><span id="iron"></span></td>
+        <td class="fOreOwned"><span id="gold"></span></td>
+        <td class="gOreOwned"><span id="diamond"></span></td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <button id="determinationButton">
+      <h1>Determination - <span id="determination"></span></h1>
+      <span style="font-size: 20px;">Working harder gets anything done quicker!</span>
+      <br />
+      <i><span style="font-size: 20px">Boosts your base digging power by <span id="determinationBoost"></span>%.</span></i>
+      <br />
+      <br />
+      Cost: <span id="determinationCost"></span>
+    </button>
+    <br />
+  </div>
+
+  <div class="tab" id="achievementsTab" style="display: none;">
+    <div id="achievements">
+      <div class="achievement" id="00">
+        <br />
+        <span style="font-size: 50px;" id="ach00"></span>
+      </div>
+      <div class="achievement" id="01">
+        <br />
+        <span style="font-size: 50px;" id="ach01"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stylesheet -->
+  <link href="css/stylesheet.css" rel="stylesheet">
+
+  <!-- Important -->
+  <script type="text/javascript" src="js/important/jQuery.min.js"></script>
+  <script type="text/javascript" src="js/important/ExpantaNum.min.js"></script>
+  <script type="text/javascript" src="js/important/notify.min.js"></script>
+  <script type="text/javascript" src="js/important/Notifier.min.js"></script>
+
+  <!-- Constants -->
+  <script type="text/javascript" src="js/constants/playerStart.js"></script>
+  <script type="text/javascript" src="js/constants/player.js"></script>
+  <script type="text/javascript" src="js/constants/achievements.js"></script>
+
+  <!-- Functions -->
+  <script type="text/javascript" src="js/functions/format.js"></script>
+  <script type="text/javascript" src="js/functions/tabs.js"></script>
+
+  <!-- Stuff -->
+  <script type="text/javascript" src="js/time.js"></script>
+  <script type="text/javascript" src="js/shovel.js"></script>
+  <script type="text/javascript" src="js/ores.js"></script>
+  <script type="text/javascript" src="js/start.js"></script>
+</html>
