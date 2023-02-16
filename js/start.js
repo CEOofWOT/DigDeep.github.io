@@ -107,6 +107,7 @@ setInterval(function(){
     displayDigPower = player.digPower;
     displayDtrm = player.determination;
     
+    $("#depth").html(format(depth,displayDepth));
     $("#digPower").html(format(digPower.current,displayDigPower.current));
 
     $("#determination").html(format(dtrm.numberOf,displayDtrm.numberOf));
