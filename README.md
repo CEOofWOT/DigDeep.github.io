@@ -1,2 +1,4 @@
-# [Dig Deep jQuery Rewrite](ceoofwot.github.io/DigDeepjQuery.github.io/game.html)
-Me when I have to rewrite a game in JavaScript into jQuery.
+# [Dig Deep](ceoofwot.github.io/DigDeep.github.io/game.html)
+A very VERY work in progress idle/incremental/clicker(?) game inspired by Distance Incremental where you...
+<br /><br />
+dig a hole?
