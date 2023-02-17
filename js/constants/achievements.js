@@ -6,7 +6,13 @@ $(document).ready(function(){
         $(`#ach${achNameChecking}`).html(player.achievements["ach" + achNameChecking].number);
         
         $(function () {
-			$('.achievement').tooltip();
+			$('.achievement').tooltip({
+				html: true,
+				placement: "bottom",
+				title: "Description.",
+				trigger: "hover",
+				position: "relative",
+			});
 		});
         
         achNameCheckingNumber += 1;
