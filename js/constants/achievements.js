@@ -5,18 +5,15 @@ $(document).ready(function(){
     $(".achievement").each(function(){
         $(`#ach${achNameChecking}`).html(player.achievements["ach" + achNameChecking].number);
         
-        $(".achievement").on("click",function(){
-            $(".achievement").notify(
-                "I'm to the right of this box", 
-                { position:"bottom center" }
-            );
-        });
+        $(function () {
+  			$('[data-toggle="tooltip"]').tooltip();
+		});
         
         achNameCheckingNumber += 1;
         if (achNameCheckingNumber < 10) {
             achNameChecking = "0" + achNameCheckingNumber;
         } else {
-            achNameChecking = "" + achNameCheckingNumber
+            achNameChecking = "" + achNameCheckingNumber;
         };
     });
 });
