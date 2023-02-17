@@ -118,6 +118,4 @@ setInterval(function(){
     } else {
         $("#determinationButton").hide();
     };
-    
-    $.notify("Access granted", "success");
 }, 0)
