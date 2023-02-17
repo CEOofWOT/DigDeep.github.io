@@ -11,7 +11,6 @@ $(document).ready(function(){
 				placement: "bottom",
 				title: "Description.",
 				trigger: "hover",
-				position: "relative",
 			});
 		});
         
