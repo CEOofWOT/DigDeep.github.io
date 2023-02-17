@@ -76,7 +76,7 @@ button {
     background: #F3C17C;
 }
 
-table, th, td {
+table:not(#achievement), th, td {
     border: 5px solid #B66D38;
     font-size: 20px;
     margin: auto;
