@@ -14,7 +14,7 @@ function format(number,displayNumber) {
             displayNumber = displayNumber.div(1000);
             return (displayNumber.toPrecise(4) + "k");
         } if (number.gte(0) && number.lt(1000)) {
-            return displayNumber;
+            return displayNumber + "";
         };
     };
 };
