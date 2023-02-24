@@ -113,7 +113,7 @@ setInterval(function(){
     $("#determination").html(format(dtrm.numberOf,displayDtrm.numberOf));
     $("#determinationBoost").html(format(dtrm.boost.base,ExpantaNum.mul(displayDtrm.boost.base, 100)));
     $("#determinationCost").html(format(dtrm.cost,displayDtrm.cost));
-    if (player.depth.gte(10) || player.determination.numberOf.gte(1)) {
+    if (ExpantaNum.gte(player.depth, 10) || ExpantaNum.gte(player.determination.numberOf, 1)) {
         $("#determinationButton").show(500);
     } else {
         $("#determinationButton").hide();
