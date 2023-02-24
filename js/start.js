@@ -9,7 +9,7 @@ var displayDigPower = digPower;
 
 $(document).ready(function(){
     $("#dig").on("click",function(){
-        if (ExpantaNum.neq(Number(player.digPower.current.toStringWithDecimalPlaces(5)),0)) {
+        if (ExpantaNum.neq(Number(ExpantaNum.toStringWithDecimalPlaces(5, player.digPower.current)),0)) {
             playerLimit.diggingLimit();
             player.depth = player.depth.plus(player.digPower.current);
             spawnOre("down");
