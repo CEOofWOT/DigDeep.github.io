@@ -5,7 +5,7 @@ $(document).ready(function(){
         console.log(`Save State: ${saveState}`)
     });
     
-    $("#save").on("click",function(){
+    $("#load").on("click",function(){
         var loadState = localStorage.getItem("DigDeepSaveFile");
         player = JSON.parse(loadState)
         console.log(`Load State: ${loadState}`)
