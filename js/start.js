@@ -9,9 +9,7 @@ var displayDigPower = digPower;
 
 $(document).ready(function(){
     $("#dig").on("click",function(){
-        var randomVariable = player.digPower.current.toPrecise(5)
-        randomVariable = Number(randomVariable)
-        if (ExpantaNum.neq(randomVariable, 0)) {
+        if (ExpantaNum.neq(player.digPower.current, 0)) {
             playerLimit.diggingLimit();
             player.depth = player.depth.plus(player.digPower.current);
             spawnOre("down");
