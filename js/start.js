@@ -94,7 +94,7 @@ $(document).ready(function(){
             player.determination.numberOf = player.determination.numberOf.plus(1);
             player.determination.boost.current = player.determination.boost.current.plus(player.determination.boost.base);
             player.digPower.current = player.digPower.current.plus(player.determination.boost.current);
-            if (player.determination.numberOf.gt(1)) {
+            if (ExpantaNum.gt(player.determination.numberOf, 1)) {
                 player.digPower.current = player.digPower.current.sub(ExpantaNum.mul(ExpantaNum.sub(player.determination.numberOf,1),player.determination.boost.base))
             };
             player.determination.cost = ExpantaNum.mul(player.determination.cost,10)
