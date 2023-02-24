@@ -18,3 +18,4 @@ function format(number,displayNumber) {
         };
     };
 };
+ 
