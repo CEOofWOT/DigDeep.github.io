@@ -111,7 +111,7 @@ setInterval(function(){
     $("#digPower").html(format(digPower.current,displayDigPower.current));
 
     $("#determination").html(format(dtrm.numberOf,displayDtrm.numberOf));
-    $("#determinationBoost").html(format(dtrm.boost.base,displayDtrm.boost.base.mul(100)));
+    $("#determinationBoost").html(format(dtrm.boost.base,ExpantaNum.mul(displayDtrm.boost.base, 100)));
     $("#determinationCost").html(format(dtrm.cost,displayDtrm.cost));
     if (player.depth.gte(10) || player.determination.numberOf.gte(1)) {
         $("#determinationButton").show(500);
