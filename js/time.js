@@ -1,1 +1,1 @@
-var time = playerStartProgress.time;
+var time = player.start.time.speed;
