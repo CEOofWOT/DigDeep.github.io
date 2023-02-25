@@ -11,7 +11,7 @@ $(document).ready(function(){
     $("#dig").on("click",function(){
         if (ExpantaNum.neq(player.start.digPower.current, 0)) {
             playerLimit.diggingLimit();
-            player.start.depth.depth = player.start.depth.depth.plus(player.start.digPower.current);
+            player.start.depth.depth = ExpantaNum.plus(player.start.depth.depth, player.start.digPower.current);
             spawnOre("down");
         };
     });
@@ -29,9 +29,9 @@ $(document).ready(function(){
 
     $("#forwards").on("click",function(){
         var placesMoved = new ExpantaNum(-3);
-        player.start.ore.you.newPosition = ExpantaNum.plus(player.start.ore.you.currentPosition,placesMoved);
+        player.start.ore.you.newPosition = ExpantaNum.plus(player.start.ore.you.currentPosition, placesMoved);
 
-        if (player.start.ore.you.newPosition.gt(player.start.ore.oreTable.areaLowestBound)) {
+        if (ExpantaNum.gt(player.start.ore.you.newPosition, player.start.ore.oreTable.areaLowestBound)) {
             $("#you").removeAttr("id");
             mineForOre("sides");
             $(`.surroundingOre${player.start.ore.you.currentPosition}`).html(player.start.ore.noOre.symbol);
@@ -44,10 +44,10 @@ $(document).ready(function(){
 
     $("#left").on("click",function(){
         var placesMoved = new ExpantaNum(-1);
-        player.start.ore.you.newPosition = ExpantaNum.plus(player.start.ore.you.currentPosition,placesMoved);
+        player.start.ore.you.newPosition = ExpantaNum.plus(player.start.ore.you.currentPosition, placesMoved);
         var modularNewPosition = ExpantaNum.mod(player.start.ore.you.newPosition,3);
 
-        if (modularNewPosition.gt(player.start.ore.oreTable.widthLowestBound) && modularNewPosition.lte(player.start.ore.oreTable.widthHighestBound)) {
+        if (ExpantaNum.gt(modularNewPosition, player.start.ore.oreTable.widthLowestBound) && ExpantaNum.lte(modularNewPosition, player.start.ore.oreTable.widthHighestBound)) {
             $("#you").removeAttr("id");
             mineForOre("sides");
             $(`.surroundingOre${player.start.ore.you.currentPosition}`).html(player.start.ore.noOre.symbol);
@@ -63,7 +63,7 @@ $(document).ready(function(){
         player.start.ore.you.newPosition = ExpantaNum.plus(player.start.ore.you.currentPosition,placesMoved);
         var modularNewPosition = ExpantaNum.plus(ExpantaNum.mod(player.start.ore.you.newPosition,3),1);
         
-        if (modularNewPosition.gte(player.start.ore.oreTable.widthLowestBound) && modularNewPosition.gte(player.start.ore.oreTable.widthHighestBound) || modularNewPosition.eq(1)) {
+        if (ExpantaNum.gte(modularNewPosition, player.start.ore.oreTable.widthLowestBound) && ExpantaNum.gte(modularNewPosition, player.start.ore.oreTable.widthHighestBound) || modularNewPosition.eq(1)) {
             $("#you").removeAttr("id");
             mineForOre("sides");
             $(`.surroundingOre${player.start.ore.you.currentPosition}`).html(player.start.ore.noOre.symbol);
@@ -78,7 +78,7 @@ $(document).ready(function(){
         var placesMoved = new ExpantaNum(3);
         player.start.ore.you.newPosition = ExpantaNum.plus(player.start.ore.you.currentPosition,placesMoved);
         
-        if (player.start.ore.you.newPosition.lte(player.start.ore.oreTable.areaHighestBound)) {
+        if (ExpantaNum.lte(player.start.ore.you.newPosition, player.start.ore.oreTable.areaHighestBound)) {
             $("#you").removeAttr("id");
             mineForOre("sides");
             $(`.surroundingOre${player.start.ore.you.currentPosition}`).html(player.start.ore.noOre.symbol);
@@ -90,14 +90,14 @@ $(document).ready(function(){
     });
 
     $("#determinationButton").on("click",function(){
-        if (player.start.depth.depth.gte(player.start.determination.cost)) {
-            player.start.determination.numberOf = player.start.determination.numberOf.plus(1);
-            player.start.determination.boost.current = player.start.determination.boost.current.plus(player.start.determination.boost.base);
-            player.start.digPower.current = player.start.digPower.current.plus(player.start.determination.boost.current);
+        if (ExpantaNum.gte(player.start.depth.depth, player.start.determination.cost)) {
+            player.start.determination.numberOf = ExpantaNum.plus(player.start.determination.numberOf, 1);
+            player.start.determination.boost.current = ExpantaNum.plus(player.start.determination.boost.current, player.start.determination.boost.base);
+            player.start.digPower.current = ExpantaNum.plus(player.start.digPower.current, player.start.determination.boost.current);
             if (ExpantaNum.gt(player.start.determination.numberOf, 1)) {
-                player.start.digPower.current = player.start.digPower.current.sub(ExpantaNum.mul(ExpantaNum.sub(player.start.determination.numberOf,1),player.start.determination.boost.base))
+                player.start.digPower.current = ExpantaNum.sub(player.start.digPower.current, ExpantaNum.mul(ExpantaNum.sub(player.start.determination.numberOf,1),player.start.determination.boost.base))
             };
-            player.start.determination.cost = ExpantaNum.mul(player.start.determination.cost,10)
+            player.start.determination.cost = ExpantaNum.mul(player.start.determination.cost, 10)
         };
     });
 });
