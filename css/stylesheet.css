@@ -118,9 +118,5 @@ table#oreChart th, td {
     margin: auto;
     font-size: 17.5px;
     transition: border-color 2.5s, background 2.5s;
-}
-
-div[role=tooltip] {
-    height: 0px;
-    width: 0px;
+    position: fixed;
 }
