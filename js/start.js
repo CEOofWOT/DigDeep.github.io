@@ -1,4 +1,4 @@
-var depth = player.start.depth;
+var depth = player.start.depth.depth;
 var displayDepth = depth;
 
 var dtrm = player.start.determination;
@@ -11,7 +11,7 @@ $(document).ready(function(){
     $("#dig").on("click",function(){
         if (ExpantaNum.neq(player.start.digPower.current, 0)) {
             playerLimit.diggingLimit();
-            player.start.depth = player.start.depth.plus(player.start.digPower.current);
+            player.start.depth.depth = player.start.depth.depth.plus(player.start.digPower.current);
             spawnOre("down");
         };
     });
@@ -20,7 +20,7 @@ $(document).ready(function(){
     $("#dig").on("keyup",function(keyPressed){
         switch (keyPressed.which) {
             case 32:
-                player.start.depth = player.start.depth.plus(player.start.digPower);
+                player.start.depth.depth = player.start.depth.depth.plus(player.start.digPower);
                 spawnOre("down");
                 break;
         };
@@ -90,7 +90,7 @@ $(document).ready(function(){
     });
 
     $("#determinationButton").on("click",function(){
-        if (player.start.depth.gte(player.start.determination.cost)) {
+        if (player.start.depth.depth.gte(player.start.determination.cost)) {
             player.start.determination.numberOf = player.start.determination.numberOf.plus(1);
             player.start.determination.boost.current = player.start.determination.boost.current.plus(player.start.determination.boost.base);
             player.start.digPower.current = player.start.digPower.current.plus(player.start.determination.boost.current);
@@ -103,7 +103,7 @@ $(document).ready(function(){
 });
 
 setInterval(function(){
-    displayDepth = player.start.depth;
+    displayDepth = player.start.depth.depth;
     displayDigPower = player.start.digPower;
     displayDtrm = player.start.determination;
     
@@ -113,7 +113,7 @@ setInterval(function(){
     $("#determination").html(format(dtrm.numberOf,displayDtrm.numberOf));
     $("#determinationBoost").html(format(dtrm.boost.base,ExpantaNum.mul(displayDtrm.boost.base, 100)));
     $("#determinationCost").html(format(dtrm.cost,displayDtrm.cost));
-    if (ExpantaNum.gte(player.start.depth, 10) || ExpantaNum.gte(player.start.determination.numberOf, 1)) {
+    if (ExpantaNum.gte(player.start.depth.depth, 10) || ExpantaNum.gte(player.start.determination.numberOf, 1)) {
         $("#determinationButton").show(500);
     } else {
         $("#determinationButton").hide();
