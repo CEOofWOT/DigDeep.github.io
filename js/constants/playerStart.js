@@ -6,7 +6,7 @@ const playerStartProgress = {
     start: {
         depth: {
             depth: new ExpantaNum(0),
-			surface: false,
+            surface: false,
         },
         digPower: {
             base: new ExpantaNum(1),
