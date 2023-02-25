@@ -80,8 +80,9 @@ function mineForOre(check) {
 
 function spawnOre(check) {
     let i = 0;
-    if (player.start.depth.depth.gte(1) && player.start.depth.depth.lt(50)) {
-        $(`td`).each(function(){
+    player.start.ore.layer = [];
+    $(`#oreTable td`).each(function(){
+        if (player.start.depth.depth.gte(1) && player.start.depth.depth.lt(50)) {
             var x = Math.floor((Math.random() * 100) + 1);
 
             if (x >= 1 && x < 50) {
@@ -91,16 +92,7 @@ function spawnOre(check) {
             } else if (x >= 81 && x <= 100) {
                 surroundingOre = c.symbol;
             };
-
-            i++;
-            if ($(`.surroundingOre${i}`).is("#you")) {
-                mineForOre(check) 
-            } else {
-                $(`.surroundingOre${i}`).html(surroundingOre);
-            };
-        });
-    } if (player.start.depth.depth.gte(51) && player.start.depth.depth.lt(150)) {
-        $(`td`).each(function(){
+        } else if (player.start.depth.depth.gte(51) && player.start.depth.depth.lt(150)) {
             var x = Math.floor((Math.random() * 100) + 1);
 
             if (x >= 1 && x < 40) {
@@ -116,16 +108,7 @@ function spawnOre(check) {
             } else if (x >= 99 && x <= 100) {
                 surroundingOre = f.symbol;
             };
-
-            i++;
-            if ($(`.surroundingOre${i}`).is("#you")) {
-                mineForOre(check) 
-            } else {
-                $(`.surroundingOre${i}`).html(surroundingOre);
-            };
-        });
-    } if (player.start.depth.depth.gte(151) && player.start.depth.depth.lt(250)) {
-        $(`td`).each(function(){
+        } else if (player.start.depth.depth.gte(151) && player.start.depth.depth.lt(250)) {
             var x = Math.floor((Math.random() * 100) + 1);
 
             if (x >= 1 && x < 35) {
@@ -143,15 +126,20 @@ function spawnOre(check) {
             } else if (x == 100) {
                 surroundingOre = g.symbol;
             };
-            
-            i++;
-            if ($(`.surroundingOre${i}`).is("#you")) {
-                mineForOre(check) 
-            } else {
-                $(`.surroundingOre${i}`).html(surroundingOre);
-            };
-        });
-    };
+        };
+        
+        i++;
+        var s = JSON.parse(`surroundingOre${i}`);
+        
+        if ($(`.{s}`).is("#you")) {
+            mineForOre(check);
+        } else {
+            $(`.{s}`).html(surroundingOre);
+        };
+    });
+    
+    player.ore.start.layer = $(`#oreTable td`).toArray;
+    console.log(player.ore.start.layer);
 };
 
 setInterval(function(){
