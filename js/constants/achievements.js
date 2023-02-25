@@ -6,13 +6,13 @@ $(document).ready(function(){
         $(`#ach${achNameChecking}`).html(player.achievements["ach" + achNameChecking].number);
         
         $(function () {
-			$('[data-toggle="tooltip"]').tooltip({
-				html: true,
-				placement: "bottom",
-				title: "Description.",
-				trigger: "hover",
-			});
-		});
+            $('[data-toggle="tooltip"]').tooltip({
+                html: true,
+                placement: "bottom",
+                title: "Description.",
+                trigger: "hover",
+                });
+        });
         
         achNameCheckingNumber += 1;
         if (achNameCheckingNumber < 10) {
