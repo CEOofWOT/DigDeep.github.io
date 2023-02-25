@@ -13,7 +13,7 @@ var g = player.start.ore.diamond;
 
 function mineForOre(check) {
     if (check == "down") {
-        if (player.start.depth.gte(1) && player.start.depth.lt(50)) {
+        if (player.start.depth.depth.gte(1) && player.start.depth.depth.lt(50)) {
             var x = Math.floor((Math.random() * 100) + 1);
 
             if (x >= 1 && x < 50) {
@@ -23,7 +23,7 @@ function mineForOre(check) {
             } else if (x >= 81 && x <= 100) {
                 c.numberOf = c.numberOf.plus(1);
             };
-        } if (player.start.depth.gte(51) && player.start.depth.lt(150)) {
+        } if (player.start.depth.depth.gte(51) && player.start.depth.depth.lt(150)) {
             var x = Math.floor((Math.random() * 100) + 1);
 
             if (x >= 1 && x < 40) {
@@ -39,7 +39,7 @@ function mineForOre(check) {
             } else if (x >= 99 && x <= 100) {
                 f.numberOf = f.numberOf.plus(1);
             };
-        } if (player.start.depth.gte(151) && player.start.depth.lt(250)) {
+        } if (player.start.depth.depth.gte(151) && player.start.depth.depth.lt(250)) {
             var x = Math.floor((Math.random() * 100) + 1);
 
             if (x >= 1 && x < 35) {
@@ -80,7 +80,7 @@ function mineForOre(check) {
 
 function spawnOre(check) {
     let i = 0;
-    if (player.start.depth.gte(1) && player.start.depth.lt(50)) {
+    if (player.start.depth.depth.gte(1) && player.start.depth.depth.lt(50)) {
         $(`td`).each(function(){
             var x = Math.floor((Math.random() * 100) + 1);
 
@@ -99,7 +99,7 @@ function spawnOre(check) {
                 $(`.surroundingOre${i}`).html(surroundingOre);
             };
         });
-    } if (player.start.depth.gte(51) && player.start.depth.lt(150)) {
+    } if (player.start.depth.depth.gte(51) && player.start.depth.depth.lt(150)) {
         $(`td`).each(function(){
             var x = Math.floor((Math.random() * 100) + 1);
 
@@ -124,7 +124,7 @@ function spawnOre(check) {
                 $(`.surroundingOre${i}`).html(surroundingOre);
             };
         });
-    } if (player.start.depth.gte(151) && player.start.depth.lt(250)) {
+    } if (player.start.depth.depth.gte(151) && player.start.depth.depth.lt(250)) {
         $(`td`).each(function(){
             var x = Math.floor((Math.random() * 100) + 1);
 
