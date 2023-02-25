@@ -1,19 +1,19 @@
-var ore = player.ore;
+var ore = player.start.ore;
 var displayOre = ore;
 var surroundingOre = "x"
 
-var a = player.ore.dirt;
-var b = player.ore.stone;
-var c = player.ore.coal;
-var d = player.ore.copper;
-var e = player.ore.iron;
-var f = player.ore.gold;
-var g = player.ore.diamond;
+var a = player.start.ore.dirt;
+var b = player.start.ore.stone;
+var c = player.start.ore.coal;
+var d = player.start.ore.copper;
+var e = player.start.ore.iron;
+var f = player.start.ore.gold;
+var g = player.start.ore.diamond;
 
 
 function mineForOre(check) {
     if (check == "down") {
-        if (player.depth.gte(1) && player.depth.lt(50)) {
+        if (player.start.depth.gte(1) && player.start.depth.lt(50)) {
             var x = Math.floor((Math.random() * 100) + 1);
 
             if (x >= 1 && x < 50) {
@@ -23,7 +23,7 @@ function mineForOre(check) {
             } else if (x >= 81 && x <= 100) {
                 c.numberOf = c.numberOf.plus(1);
             };
-        } if (player.depth.gte(51) && player.depth.lt(150)) {
+        } if (player.start.depth.gte(51) && player.start.depth.lt(150)) {
             var x = Math.floor((Math.random() * 100) + 1);
 
             if (x >= 1 && x < 40) {
@@ -39,7 +39,7 @@ function mineForOre(check) {
             } else if (x >= 99 && x <= 100) {
                 f.numberOf = f.numberOf.plus(1);
             };
-        } if (player.depth.gte(151) && player.depth.lt(250)) {
+        } if (player.start.depth.gte(151) && player.start.depth.lt(250)) {
             var x = Math.floor((Math.random() * 100) + 1);
 
             if (x >= 1 && x < 35) {
@@ -59,7 +59,7 @@ function mineForOre(check) {
             };
         };
     } if (check == "sides") {
-        var oreCheck = $(`.surroundingOre${player.ore.you.newPosition}`).text();
+        var oreCheck = $(`.surroundingOre${player.start.ore.you.newPosition}`).text();
         if (oreCheck == a.symbol) {
             a.numberOf = a.numberOf.plus(1);
         } else if (oreCheck == b.symbol) {
@@ -80,7 +80,7 @@ function mineForOre(check) {
 
 function spawnOre(check) {
     let i = 0;
-    if (player.depth.gte(1) && player.depth.lt(50)) {
+    if (player.start.depth.gte(1) && player.start.depth.lt(50)) {
         $(`td`).each(function(){
             var x = Math.floor((Math.random() * 100) + 1);
 
@@ -99,7 +99,7 @@ function spawnOre(check) {
                 $(`.surroundingOre${i}`).html(surroundingOre);
             };
         });
-    } if (player.depth.gte(51) && player.depth.lt(150)) {
+    } if (player.start.depth.gte(51) && player.start.depth.lt(150)) {
         $(`td`).each(function(){
             var x = Math.floor((Math.random() * 100) + 1);
 
@@ -124,7 +124,7 @@ function spawnOre(check) {
                 $(`.surroundingOre${i}`).html(surroundingOre);
             };
         });
-    } if (player.depth.gte(151) && player.depth.lt(250)) {
+    } if (player.start.depth.gte(151) && player.start.depth.lt(250)) {
         $(`td`).each(function(){
             var x = Math.floor((Math.random() * 100) + 1);
 
@@ -155,8 +155,8 @@ function spawnOre(check) {
 };
 
 setInterval(function(){
-    $("#you").html(player.ore.you.symbol);
-    $("#minedOre").html(player.ore.noOre.symbol);
+    $("#you").html(player.start.ore.you.symbol);
+    $("#minedOre").html(player.start.ore.noOre.symbol);
 
     $("#dirt").html(format(a.numberOf,displayOre.dirt.numberOf));
     if (a.numberOf.gte(1)) {
