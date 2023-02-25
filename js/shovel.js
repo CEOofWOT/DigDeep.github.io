@@ -12,8 +12,8 @@ class shovelCalc {
     diggingLimiter() {
         var limit = ExpantaNum.times(this.shovelType, this.shovelMaxDepth);
         if (ExpantaNum.gte(player.start.depth.depth, limit)) {
-            player.start.digPower.current = player.start.digPower.current.times(0.5);
-            player.start.determination.boost.current = player.start.determination.boost.current.times(0.5);
+            player.start.digPower.current = ExpantaNum.times(player.start.digPower.current, 0.5);
+            player.start.determination.boost.current = ExpantaNum.times(player.start.determination.boost.current, 0.5);
         };
     };
 };
