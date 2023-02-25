@@ -11,11 +11,11 @@ class shovelCalc {
 
     diggingLimiter() {
         var limit = ExpantaNum.times(this.shovelType,this.shovelMaxDepth);
-        if (player.depth.gte(limit)) {
-            player.digPower.current = player.digPower.current.times(0.5);
-            player.determination.boost.current = player.determination.boost.current.times(0.5);
+        if (player.start.depth.gte(limit)) {
+            player.start.digPower.current = player.start.digPower.current.times(0.5);
+            player.start.determination.boost.current = player.start.determination.boost.current.times(0.5);
         };
     };
 };
 
-const playerLimit = new shovelCalc(player.shovel.type, player.shovel.maxDepth, player.shovel.cost);
+const playerLimit = new shovelCalc(player.start.shovel.type, player.start.shovel.maxDepth, player.start.shovel.cost);
