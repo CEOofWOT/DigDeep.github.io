@@ -23,6 +23,7 @@ const playerStartProgress = {
                 areaLowestBound: new ExpantaNum(0),
                 areaHighestBound: new ExpantaNum(9),
             },
+            layer: ["NO", "NO", "NO", "NO", "You", "NO", "NO", "NO", "NO"],
             you: {
                 symbol: "You",
                 currentPosition: new ExpantaNum(5),
