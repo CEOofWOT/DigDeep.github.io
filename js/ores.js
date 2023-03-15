@@ -137,8 +137,7 @@ function spawnOre(check) {
         };
     });
     
-    player.ore.start.layer = $(`#oreTable td`).toArray;
-    console.log(player.ore.start.layer);
+    console.log(player.start.ore.layer);
 };
 
 setInterval(function(){
@@ -193,4 +192,6 @@ setInterval(function(){
     } else {
         $(".gOreOwned").hide();
     }
+    
+    player.start.ore.layer = $(`#oreTable td`).toArray;
 }, 0);
