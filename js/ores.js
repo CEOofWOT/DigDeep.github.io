@@ -80,7 +80,6 @@ function mineForOre(check) {
 
 function spawnOre(check) {
     let i = 0;
-    player.start.ore.layer = [];
     $(`#oreTable td`).each(function(){
         if (player.start.depth.depth.gte(1) && player.start.depth.depth.lt(50)) {
             var x = Math.floor((Math.random() * 100) + 1);
@@ -133,6 +132,7 @@ function spawnOre(check) {
         if ($(`surroundingOre${i}`).is("#you")) {
             mineForOre(check);
         } else {
+            print("check")
             $(`surroundingOre${i}`).html(surroundingOre);
         };
     });
