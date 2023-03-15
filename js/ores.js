@@ -129,12 +129,11 @@ function spawnOre(check) {
         };
         
         i++;
-        var s = JSON.parse(`surroundingOre${i}`);
         
-        if ($(`.{s}`).is("#you")) {
+        if ($(`surroundingOre${i}`).is("#you")) {
             mineForOre(check);
         } else {
-            $(`.{s}`).html(surroundingOre);
+            $(`surroundingOre${i}`).html(surroundingOre);
         };
     });
     
