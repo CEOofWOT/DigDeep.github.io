@@ -132,7 +132,7 @@ function spawnOre(check) {
         if ($(`surroundingOre${i}`).is("#you")) {
             mineForOre(check);
         } else {
-            print("check")
+            console.log("check")
             $(`surroundingOre${i}`).html(surroundingOre);
         };
     });
