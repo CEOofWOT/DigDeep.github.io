@@ -12,7 +12,7 @@ $(document).ready(function(){
         if (ExpantaNum.neq(Number(ExpantaNum(player.start.digPower.current).toFixed(4)), 0)) {
             playerLimit.diggingLimit();
             player.start.depth.depth = ExpantaNum.plus(player.start.depth.depth, player.start.digPower.current);
-            mineForOre("down");
+            spawnOre("down");
         };
     });
 
