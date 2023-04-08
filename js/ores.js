@@ -130,14 +130,15 @@ function spawnOre(check) {
         i++;
         
         if ($(`surroundingOre${i}`).is("#you")) {
+            console.log(check, i)
             mineForOre(check);
         } else {
-            console.log("check")
+            console.log(check, i)
             $(`surroundingOre${i}`).html(surroundingOre);
         };
     });
     
-    console.log(player.start.ore.layer);
+    // console.log(player.start.ore.layer);
 };
 
 setInterval(function(){
